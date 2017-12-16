@@ -12,9 +12,11 @@ module.exports = (app) => {
     });
     app.get('/api/films/read', (req, res) => {
         try{
-            let id = req.query.id;
+            let id = parseInt(req.query.id);
             if(!id) throw new Error;
-            res.send(films[id - 1]);
+            let index = findById(id);
+            res.send(films[index]);
+            //res.send(films[id - 1]);
         }
         catch(Error){
             res.send("Wrong parameters");

@@ -1,5 +1,4 @@
 const JH = require('../helpers/json_helper');
-const uid = require('uid');
 
 class Film {
     constructor(film) {
